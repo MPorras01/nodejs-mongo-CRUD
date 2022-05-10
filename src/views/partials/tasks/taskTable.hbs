@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th>N</th>
+      <th>title</th>
+      <th>description</th>
+      <th>operation</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each task}}
+      <tr>
+        <td>{{@index}}</td>
+        <td> {{title}}</td>
+        <td>{{description}}</td>
+        <td>
+          {{#if done}}
+              <a href="/toggleDone/{{_id}}">Hacer</a>
+          {{else}}
+              <a href="/toggleDone/{{_id}}">Hecho</a>
+          {{/if}}
+
+          <a href="/delete/{{_id}}"> Eliminar</a>
+          <a href="/edit/{{_id}}">Update</a>
+
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
